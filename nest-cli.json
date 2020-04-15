@@ -1,4 +1,39 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/sf-nest-api/src",
+  "monorepo": true,
+  "root": "apps/sf-nest-api",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/sf-nest-api/tsconfig.app.json"
+  },
+  "projects": {
+    "sf-nest-api": {
+      "type": "application",
+      "root": "apps/sf-nest-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/sf-nest-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sf-nest-api/tsconfig.app.json"
+      }
+    },
+    "service-core": {
+      "type": "application",
+      "root": "apps/service-core",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-core/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-core/tsconfig.app.json"
+      }
+    },
+    "service-user": {
+      "type": "application",
+      "root": "apps/service-user",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-user/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-user/tsconfig.app.json"
+      }
+    }
+  }
 }
